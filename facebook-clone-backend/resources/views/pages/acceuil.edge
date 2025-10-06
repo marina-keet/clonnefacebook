@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'facebook-blue': '#1877F2',
+                        'facebook-dark': '#166FE5',
+                        'facebook-gray': '#E4E6EA',
+                        'facebook-dark-gray': '#8A8D91',
+                        'facebook-light-gray': '#F0F2F5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-facebook-light-gray">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-full mx-auto px-4">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo et Recherche -->
+                <div class="flex items-center space-x-4 flex-1">
+                    <div class="text-facebook-blue text-2xl font-bold">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="relative max-w-xs w-full">
+                        <input type="text" placeholder="Rechercher sur Facebook"
+                            class="bg-facebook-light-gray rounded-full pl-10 pr-4 py-2 w-full focus:outline-none focus:bg-white focus:shadow-md text-sm">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-500 text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Navigation centrale -->
+                <div class="flex space-x-2 mx-8">
+                    <a href="#" class="relative px-12 py-3 text-facebook-blue border-b-2 border-facebook-blue">
+                        <i class="fas fa-home text-2xl"></i>
+                    </a>
+                    <a href="#" class="relative px-12 py-3 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-tv text-2xl"></i>
+                    </a>
+                    <a href="#" class="relative px-12 py-3 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-store text-2xl"></i>
+                    </a>
+                    <a href="#" class="relative px-12 py-3 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-users text-2xl"></i>
+                    </a>
+                    <a href="#" class="relative px-12 py-3 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-gamepad text-2xl"></i>
+                    </a>
+                </div>
+
+                <!-- Menu utilisateur -->
+                <div class="flex items-center space-x-2 flex-1 justify-end">
+                    <button class="bg-facebook-light-gray rounded-full p-2 hover:bg-gray-300">
+                        <i class="fas fa-th text-lg"></i>
+                    </button>
+                    <button class="bg-facebook-light-gray rounded-full p-2 hover:bg-gray-300 relative">
+                        <i class="fab fa-facebook-messenger text-lg"></i>
+                    </button>
+                    <button class="bg-facebook-light-gray rounded-full p-2 hover:bg-gray-300 relative">
+                        <i class="fas fa-bell text-lg"></i>
+                        <span
+                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 min-w-[20px] text-center">20+</span>
+                    </button>
+                    <button class="bg-facebook-light-gray rounded-full p-1 hover:bg-gray-300">
+                        <div class="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-4 px-4">
+        <div class="grid grid-cols-12 gap-6">
+            <!-- Sidebar gauche -->
+            <div class="col-span-3">
+                <div class="sticky top-20 h-screen overflow-y-auto pb-20 space-y-2">
+                    <!-- Profil utilisateur -->
+                    <a href="profile.html" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-gray-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                        <span class="font-medium text-gray-800">Chance Marina</span>
+                    </a>
+
+                    <!-- Menu items -->
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-robot text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-800">Meta AI</span>
+                    </a>
+
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-800">Ami(e)s</span>
+                    </a>
+
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-orange-600"></i>
+                        </div>
+                        <span class="text-gray-800">Souvenirs</span>
+                    </a>
+
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bookmark text-purple-600"></i>
+                        </div>
+                        <span class="text-gray-800">Enregistrements</span>
+                    </a>
+
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-800">Groupes</span>
+                    </a>
+
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-green-600"></i>
+                        </div>
+                        <span class="text-gray-800">Vidéo</span>
+                    </a>
+
+                    <a href="#" class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg">
+                        <div class="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-store text-blue-600"></i>
+                        </div>
+                        <span class="text-gray-800">Marketplace</span>
+                    </a>
+
+                    <button class="flex items-center space-x-3 p-2 hover:bg-gray-200 rounded-lg w-full">
+                        <div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chevron-down text-gray-600"></i>
+                        </div>
+                        <span class="text-gray-800">Voir plus</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenu principal -->
+            <div class="col-span-6">
+                <!-- Stories -->
+                <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+                    <div class="flex space-x-3 overflow-x-auto pb-2">
+                        <!-- Créer une story -->
+                        <div
+                            class="flex-shrink-0 w-28 h-40 bg-gradient-to-b from-gray-100 to-gray-200 rounded-xl relative cursor-pointer hover:scale-105 transition-transform overflow-hidden">
+                            <div class="h-32 bg-gray-300"></div>
+                            <div class="absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                <div class="bg-facebook-blue rounded-full p-2 border-4 border-white">
+                                    <i class="fas fa-plus text-white text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-2 left-0 right-0 text-center">
+                                <p class="text-xs font-medium text-gray-800">Créer une story</p>
+                            </div>
+                        </div>
+
+                        <!-- Stories d'amis -->
+                        <div
+                            class="flex-shrink-0 w-28 h-40 bg-gradient-to-b from-pink-400 to-purple-600 rounded-xl relative cursor-pointer hover:scale-105 transition-transform overflow-hidden">
+                            <div class="absolute top-3 left-3">
+                                <div
+                                    class="w-8 h-8 bg-facebook-blue rounded-full border-3 border-white flex items-center justify-center">
+                                    <span class="text-white text-xs font-bold">SR</span>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <p class="text-white text-xs font-medium">Super Rosettes</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex-shrink-0 w-28 h-40 bg-gradient-to-b from-blue-400 to-blue-600 rounded-xl relative cursor-pointer hover:scale-105 transition-transform overflow-hidden">
+                            <div class="absolute top-3 left-3">
+                                <div
+                                    class="w-8 h-8 bg-facebook-blue rounded-full border-3 border-white flex items-center justify-center">
+                                    <i class="fas fa-user text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <p class="text-white text-xs font-medium">Christelle Christy...</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex-shrink-0 w-28 h-40 bg-gradient-to-b from-purple-400 to-pink-600 rounded-xl relative cursor-pointer hover:scale-105 transition-transform overflow-hidden">
+                            <div class="absolute top-3 left-3">
+                                <div
+                                    class="w-8 h-8 bg-facebook-blue rounded-full border-3 border-white flex items-center justify-center">
+                                    <span class="text-white text-xs font-bold">IC</span>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <p class="text-white text-xs font-medium">Impact Centre Chrétien...</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex-shrink-0 w-28 h-40 bg-gradient-to-b from-red-400 to-purple-600 rounded-xl relative cursor-pointer hover:scale-105 transition-transform overflow-hidden">
+                            <div class="absolute top-3 left-3">
+                                <div
+                                    class="w-8 h-8 bg-facebook-blue rounded-full border-3 border-white flex items-center justify-center">
+                                    <span class="text-white text-xs font-bold">KA</span>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <p class="text-white text-xs font-medium">Kadea Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Créer un post -->
+                <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <input type="text" placeholder="Quoi de neuf, Chance ?"
+                            class="flex-1 bg-facebook-light-gray rounded-full px-4 py-3 hover:bg-gray-200 cursor-pointer focus:outline-none text-gray-600"
+                            id="post-input">
+                    </div>
+                    <hr class="mb-4 border-gray-200">
+                    <div class="flex justify-around">
+                        <button
+                            class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-lg flex-1 justify-center">
+                            <i class="fas fa-video text-red-500 text-xl"></i>
+                            <span class="text-gray-600 font-medium">Vidéo en direct</span>
+                        </button>
+                        <button
+                            class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-lg flex-1 justify-center">
+                            <i class="fas fa-images text-green-500 text-xl"></i>
+                            <span class="text-gray-600 font-medium">Photo/Vidéo</span>
+                        </button>
+                        <button
+                            class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-lg flex-1 justify-center">
+                            <i class="fas fa-smile text-yellow-500 text-xl"></i>
+                            <span class="text-gray-600 font-medium">Humeur/Activité</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post de Impact Centre Chrétien -->
+                <div class="bg-white rounded-lg shadow-sm mb-4">
+                    <!-- En-tête du post -->
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div
+                                    class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                                    IC
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Impact Centre Chrétien -Eglise locale de
+                                        Trois-Rivières</p>
+                                    <div class="flex items-center space-x-1 text-gray-500 text-sm">
+                                        <span>16 h</span>
+                                        <i class="fas fa-globe-americas text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="text-gray-500 hover:bg-gray-100 rounded-full p-2">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                                <button class="text-gray-500 hover:bg-gray-100 rounded-full p-2">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Contenu du post -->
+                        <div class="mb-4">
+                            <p class="text-gray-800 mb-2">
+                                🔥 48H NON-STOP de prières en langues🔥🙏
+                            </p>
+                            <p class="text-gray-800">
+                                La... <span class="text-facebook-blue font-semibold cursor-pointer">En voir plus</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Image du post -->
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/600x400/1e3a8a/ffffff?text=48H+NON-STOP+DE+PRIERES+EN+LANGUE"
+                            alt="48H Non-stop de prières" class="w-full h-64 object-cover">
+                    </div>
+
+                    <!-- Stats du post -->
+                    <div class="px-4 py-3 border-b border-gray-100">
+                        <div class="flex justify-between items-center text-sm text-gray-500">
+                            <div class="flex items-center space-x-2">
+                                <div class="flex -space-x-1">
+                                    <div
+                                        class="w-5 h-5 bg-facebook-blue rounded-full flex items-center justify-center border border-white">
+                                        <i class="fas fa-thumbs-up text-white text-xs"></i>
+                                    </div>
+                                    <div
+                                        class="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center border border-white">
+                                        <i class="fas fa-heart text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <span>12</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <span>3 commentaires</span>
+                                <span>2 partages</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions du post -->
+                    <div class="px-4 py-2">
+                        <div class="flex justify-around">
+                            <button
+                                class="flex items-center justify-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-lg flex-1 text-gray-600">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="font-medium">J'aime</span>
+                            </button>
+                            <button
+                                class="flex items-center justify-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-lg flex-1 text-gray-600">
+                                <i class="fas fa-comment"></i>
+                                <span class="font-medium">Commenter</span>
+                            </button>
+                            <button
+                                class="flex items-center justify-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-lg flex-1 text-gray-600">
+                                <i class="fas fa-share"></i>
+                                <span class="font-medium">Partager</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plus de posts seront ajoutés ici -->
+                <div id="posts-container">
+                    <!-- Les posts seront ajoutés dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Sidebar droite -->
+            <div class="col-span-3">
+                <div class="sticky top-20 h-screen overflow-y-auto pb-20">
+                    <!-- Sponsorisé -->
+                    <div class="mb-6">
+                        <h3 class="text-gray-600 font-medium mb-4">Sponsorisé</h3>
+                        <div class="space-y-4">
+                            <!-- Pub MongoDB -->
+                            <div class="flex space-x-3 p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+                                <img src="https://via.placeholder.com/80x80/00684A/ffffff?text=MongoDB" alt="MongoDB"
+                                    class="w-20 h-20 rounded-lg object-cover">
+                                <div class="flex-1">
+                                    <p class="font-medium text-gray-900">Attention SQL Experts! Meet MongoDB.</p>
+                                    <p class="text-sm text-gray-600 mt-1">Register today for free!</p>
+                                    <p class="text-xs text-gray-500 mt-1">learn.mongodb.com</p>
+                                </div>
+                            </div>
+
+                            <!-- Pub Jeu -->
+                            <div class="flex space-x-3 p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+                                <img src="https://via.placeholder.com/80x80/4C1D95/ffffff?text=Game" alt="Jeu"
+                                    class="w-20 h-20 rounded-lg object-cover">
+                                <div class="flex-1">
+                                    <p class="font-medium text-gray-900">Ton navigateur, ton champ de bataille.</p>
+                                    <p class="text-xs text-gray-500 mt-1">www.wartuneultra.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Anniversaires -->
+                    <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                        <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-gift text-facebook-blue mr-2"></i>
+                            Anniversaires
+                        </h3>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-gift text-facebook-blue"></i>
+                            <span class="text-sm">C'est l'anniversaire de <strong>Gladys Kanku</strong>
+                                aujourd'hui.</span>
+                        </div>
+                    </div>
+
+                    <!-- Contacts -->
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-semibold text-gray-900">Contacts</h3>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-500 hover:bg-gray-100 rounded-full p-1">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="text-gray-500 hover:bg-gray-100 rounded-full p-1">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-purple-400 rounded-full flex items-center justify-center">
+                                        <span class="text-white text-xs font-bold">EM</span>
+                                    </div>
+                                    <div
+                                        class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white">
+                                    </div>
+                                </div>
+                                <span class="text-sm font-medium">Exaucee Masa</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-pink-400 rounded-full flex items-center justify-center">
+                                        <span class="text-white text-xs font-bold">AT</span>
+                                    </div>
+                                    <div
+                                        class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white">
+                                    </div>
+                                </div>
+                                <span class="text-sm font-medium">Aisha Tebake</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour créer un post -->
+    <div id="post-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg max-w-md w-full mx-4">
+            <div class="p-4 border-b">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg font-semibold">Créer une publication</h2>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">Chance Marina</p>
+                        <p class="text-sm text-gray-500">Public</p>
+                    </div>
+                </div>
+                <textarea id="post-content" placeholder="Quoi de neuf, Chance ?"
+                    class="w-full h-32 p-3 border border-gray-200 rounded-lg resize-none focus:outline-none focus:border-facebook-blue"></textarea>
+                <div class="flex justify-end mt-4">
+                    <button id="publish-post"
+                        class="bg-facebook-blue text-white px-6 py-2 rounded-md hover:bg-facebook-dark">
+                        Publier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

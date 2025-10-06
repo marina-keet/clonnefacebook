@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'facebook-blue': '#1877F2',
+                        'facebook-dark': '#166FE5',
+                        'facebook-light-gray': '#F0F2F5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-facebook-light-gray">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
+            <div class="text-facebook-blue text-4xl mb-4">
+                <i class="fab fa-facebook"></i>
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900 mb-4">Bienvenue sur Facebook !</h1>
+            <p class="text-gray-600 mb-6">Vous êtes maintenant connecté.</p>
+
+            <div class="space-y-4">
+                <a href="/home"
+                    class="block w-full bg-facebook-blue hover:bg-facebook-dark text-white font-bold py-3 px-4 rounded-md transition-colors">
+                    Aller à l'accueil
+                </a>
+
+                <form action="/logout" method="POST">
+                    <button type="submit"
+                        class="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded-md transition-colors">
+                        Se déconnecter
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

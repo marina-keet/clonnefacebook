@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook - Connexion ou inscription</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'facebook-blue': '#1877F2',
+            'facebook-dark': '#166FE5',
+            'facebook-gray': '#E4E6EA',
+            'facebook-dark-gray': '#8A8D91'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+  <div class="flex min-h-screen">
+    <!-- Section gauche - Logo et connexions récentes -->
+    <div class="flex-1 flex items-center justify-center px-4">
+      <div class="max-w-md w-full">
+        <!-- Titre Facebook -->
+        <div class="mb-8">
+          <h1 class="text-facebook-blue text-6xl font-bold tracking-tight">facebook</h1>
+        </div>
+
+        <!-- Logo -->
+        <div class="flex justify-center">
+          <img src="image/Facebook Lite - Apps on Google Play.jpeg" alt="Facebook Logo" class="max-w-md w-full h-auto">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section droite - Formulaire de connexion -->
+    <div class="flex-1 flex items-center justify-center px-4">
+      <div class="max-w-sm w-full">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+          <form id="login-form" class="space-y-3">
+            <!-- Email/Téléphone -->
+            <div>
+              <input type="text" id="email" placeholder="Adresse e-mail ou numéro de tél."
+                class="w-full px-4 py-3.5 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue focus:ring-1 focus:ring-facebook-blue text-base"
+                required>
+            </div>
+
+            <!-- Mot de passe -->
+            <div>
+              <input type="password" id="password" placeholder="Mot de passe"
+                class="w-full px-4 py-3.5 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue focus:ring-1 focus:ring-facebook-blue text-base"
+                required>
+            </div>
+
+            <!-- Bouton Se connecter -->
+            <button type="submit"
+              class="w-full bg-facebook-blue hover:bg-facebook-dark text-white font-bold py-3 px-4 rounded-md text-lg transition-colors">
+              Se connecter
+            </button>
+          </form>
+
+          <!-- Mot de passe oublié -->
+          <div class="text-center mt-4">
+            <a href="#" class="text-facebook-blue hover:underline text-sm">Mot de passe oublié ?</a>
+          </div>
+
+          <!-- Ligne de séparation -->
+          <div class="my-5 border-t border-gray-200"></div>
+
+          <!-- Bouton Créer un compte -->
+          <div class="text-center">
+            <button id="create-account-btn"
+              class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md text-base transition-colors">
+              Créer un nouveau compte
+            </button>
+          </div>
+        </div>
+
+        <!-- Créer une page -->
+        <div class="text-center mt-6">
+          <p class="text-sm text-gray-600">
+            <a href="#" class="font-medium hover:underline">Créer une Page</a>
+            pour une célébrité, une marque ou une entreprise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de création de compte -->
+  <div id="signup-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">S'inscrire</h2>
+            <p class="text-gray-600 text-sm">C'est rapide et facile.</p>
+          </div>
+          <button id="close-signup-modal" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <div class="p-6">
+        <form id="signup-form" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <input type="text" placeholder="Prénom"
+              class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue"
+              required>
+            <input type="text" placeholder="Nom de famille"
+              class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue"
+              required>
+          </div>
+          <input type="email" placeholder="Adresse e-mail"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue"
+            required>
+          <input type="password" placeholder="Nouveau mot de passe"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue"
+            required>
+
+          <div>
+            <label class="block text-sm text-gray-600 mb-2">Date de naissance</label>
+            <div class="grid grid-cols-3 gap-2">
+              <select class="px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue">
+                <option>Jour</option>
+              </select>
+              <select class="px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue">
+                <option>Mois</option>
+              </select>
+              <select class="px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-facebook-blue">
+                <option>Année</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-600 mb-2">Genre</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="flex items-center justify-between p-2 border border-gray-300 rounded-md cursor-pointer">
+                <span class="text-sm">Femme</span>
+                <input type="radio" name="gender" value="female" class="text-facebook-blue">
+              </label>
+              <label class="flex items-center justify-between p-2 border border-gray-300 rounded-md cursor-pointer">
+                <span class="text-sm">Homme</span>
+                <input type="radio" name="gender" value="male" class="text-facebook-blue">
+              </label>
+              <label class="flex items-center justify-between p-2 border border-gray-300 rounded-md cursor-pointer">
+                <span class="text-sm">Autre</span>
+                <input type="radio" name="gender" value="other" class="text-facebook-blue">
+              </label>
+            </div>
+          </div>
+
+          <p class="text-xs text-gray-600 leading-relaxed">
+            En cliquant sur S'inscrire, vous acceptez nos
+            <a href="#" class="text-facebook-blue hover:underline">Conditions générales</a>,
+            notre <a href="#" class="text-facebook-blue hover:underline">Politique de confidentialité</a>
+            et notre <a href="#" class="text-facebook-blue hover:underline">Politique d'utilisation des cookies</a>.
+          </p>
+
+          <button type="submit"
+            class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition-colors">
+            S'inscrire
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  <script>
+    // Gestion de la connexion et des modals
+    document.addEventListener('DOMContentLoaded', function () {
+      // Éléments du DOM
+      const loginForm = document.getElementById('login-form');
+      const createAccountBtn = document.getElementById('create-account-btn');
+      const signupModal = document.getElementById('signup-modal');
+      const closeSignupModal = document.getElementById('close-signup-modal');
+      const signupForm = document.getElementById('signup-form');
+
+      // Gestion de la soumission du formulaire de connexion
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (email && password) {
+          // Simulation de la connexion
+          showLoginSuccess();
+          setTimeout(() => {
+            window.location.href = 'home.html';
+          }, 1500);
+        }
+      });
+
+      // Ouverture du modal d'inscription
+      createAccountBtn.addEventListener('click', function () {
+        signupModal.classList.remove('hidden');
+      });
+
+      // Fermeture du modal d'inscription
+      closeSignupModal.addEventListener('click', function () {
+        signupModal.classList.add('hidden');
+      });
+
+      // Fermeture du modal en cliquant à l'extérieur
+      signupModal.addEventListener('click', function (e) {
+        if (e.target === signupModal) {
+          signupModal.classList.add('hidden');
+        }
+      });
+
+      // Gestion de la soumission du formulaire d'inscription
+      signupForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        showSignupSuccess();
+        setTimeout(() => {
+          signupModal.classList.add('hidden');
+          window.location.href = 'home.html';
+        }, 1500);
+      });
+
+      // Clic sur le profil Chance pour connexion automatique
+      document.querySelector('.group').addEventListener('click', function () {
+        document.getElementById('email').value = 'chance.marina@email.com';
+        document.getElementById('password').value = '••••••••';
+        setTimeout(() => {
+          window.location.href = 'home.html';
+        }, 500);
+      });
+    });
+
+    // Fonction pour afficher le succès de la connexion
+    function showLoginSuccess() {
+      const notification = document.createElement('div');
+      notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center space-x-2';
+      notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>Connexion réussie !</span>
+            `;
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+
+    // Fonction pour afficher le succès de l'inscription
+    function showSignupSuccess() {
+      const notification = document.createElement('div');
+      notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center space-x-2';
+      notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>Compte créé avec succès !</span>
+            `;
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+
+    // Animation des éléments au chargement
+    window.addEventListener('load', function () {
+      const elements = document.querySelectorAll('.bg-white');
+      elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+
+        setTimeout(() => {
+          el.style.transition = 'all 0.6s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 200);
+      });
+    });
+  </script>
+</body>
+
+</html>
